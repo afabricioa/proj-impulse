@@ -7,7 +7,13 @@ export class Feedback{
     id?: string;
 
     @Column()
+    type?: string;
+    
+    @Column()
     comment?: string;
+
+    @Column()
+    screenshot?: string;
 
     constructor(){
         if(!this.id){

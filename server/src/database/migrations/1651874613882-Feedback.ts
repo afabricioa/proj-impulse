@@ -13,7 +13,15 @@ export class Feedback1651874613882 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
+                        name: "type",
+                        type: "varchar"
+                    },
+                    {
                         name: "comment",
+                        type: "varchar"
+                    },
+                    {
+                        name: "screenshot",
                         type: "varchar"
                     }
                 ]
