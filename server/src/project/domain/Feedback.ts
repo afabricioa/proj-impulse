@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { v4 as uuidv4 } from 'uuid';
 
-@Entity()
+@Entity("feedbacks")
 export class Feedback{
     @PrimaryGeneratedColumn()
     id?: string;
