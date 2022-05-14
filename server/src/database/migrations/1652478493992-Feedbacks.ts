@@ -1,6 +1,6 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class Feedback1651874613882 implements MigrationInterface {
+export class Feedbacks1652478493992 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
@@ -9,7 +9,7 @@ export class Feedback1651874613882 implements MigrationInterface {
                 columns: [
                     {
                         name: "id",
-                        type: "uuid",
+                        type: "varchar",
                         isPrimary: true
                     },
                     {
@@ -34,3 +34,4 @@ export class Feedback1651874613882 implements MigrationInterface {
     }
 
 }
+

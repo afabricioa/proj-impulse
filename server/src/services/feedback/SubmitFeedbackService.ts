@@ -16,7 +16,6 @@ export class SubmitFeedbackService{
         // await feedbacksRepository.create({
         //     type, comment, screenshot
         // });
-        console.log(screenshot)
         await this.feedbacksRepository.create({type, comment, screenshot})
     }
 }

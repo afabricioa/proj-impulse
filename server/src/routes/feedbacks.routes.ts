@@ -2,6 +2,7 @@ import { Router } from "express";
 import { IFeedbacksRepository } from "../repositories/IFeedbacksRepository";
 import { FeedbacksRepository } from "../repositories/implementations/FeedbacksRepository";
 import { SubmitFeedbackService } from "../services/feedback/SubmitFeedbackService";
+import createFeedbackController from "../useCases/Feedback";
 
 const feedbackRoutes = Router();
 
@@ -9,15 +10,7 @@ const feedbackRoutes = Router();
 // "/nomemetodo" são rotas a partir da principal
 
 feedbackRoutes.post("/", (req, res) => {
-    const { type, comment, screenshot } = req.body;
-    
-    const feedbacksRepository = new FeedbacksRepository();
-    const submitFeedbackService = new SubmitFeedbackService(feedbacksRepository);
-    
-    // console.log(req.body)
-    submitFeedbackService.execute({type, comment, screenshot});
-
-    return res.status(201);
+    return createFeedbackController().handle(req, res);
 });
 
 feedbackRoutes.post("/teste", (req, res) => {
