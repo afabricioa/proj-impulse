@@ -1,3 +1,4 @@
+import api from "../../../lib/api";
 import { ArrowLeft, Camera } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { FeedbackType, feedBackTypes } from "..";
@@ -14,12 +15,25 @@ export function FeedbackContentStep(props: FeedbackContentProps){
     const [comment, setComment] = useState('')
     const feedbackTypeInfo = feedBackTypes[props.feedbackType]
 
-    function handleSubmitForm(event: FormEvent){
+    async function handleSubmitForm(event: FormEvent){
         event.preventDefault()
-        console.log(screenshot)
-        console.log(comment)
+        console.log(props)
+        
+        try {
+            await api.post("/feedbacks", {
+                type: props.feedbackType,
+                comment, 
+                screenshot
+            }).then(function(result) {
+                console.log('Logging result ' + result);
+            }).catch(function(error) {
+                console.log('What happened? ' + error);
+            });
 
-        props.onFeedbackSent();
+            props.onFeedbackSent();
+        } catch (error) {
+            console.log(error)
+        }
     }
     return (
         <>

@@ -22,3 +22,4 @@ export const AppDataSource = new DataSource({
 //npm run typeorm migration:revert
 //npx typeorm migration:create -n nomeMigration
 //npx ts-node-dev ./node_modules/typeorm/cli migration:run -d ./src/da
+//npx ts-node-dev ./node_modules/typeorm/cli migration:run -d ./src/database/databaseConfig

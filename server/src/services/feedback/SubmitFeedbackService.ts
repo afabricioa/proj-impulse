@@ -20,16 +20,17 @@ export class SubmitFeedbackService{
         // await feedbacksRepository.create({
         //     type, comment, screenshot
         // });
+        console.log(type)
         await this.feedbacksRepository.create({type, comment, screenshot})
 
-        await this.mailUtil.sendMail({
-            subject: "Novo Feedback",
-            body: [
-                `<div style="font-family: sans-serif; font-size: 16px; color: #111;">`,
-                `<p>Tipo de Feedback: ${type}</p>`,
-                `<p>Comentário: ${comment}</p>`,
-                `</div>`
-            ].join('\n')
-        })
+        // await this.mailUtil.sendMail({
+        //     subject: "Novo Feedback",
+        //     body: [
+        //         `<div style="font-family: sans-serif; font-size: 16px; color: #111;">`,
+        //         `<p>Tipo de Feedback: ${type}</p>`,
+        //         `<p>Comentário: ${comment}</p>`,
+        //         `</div>`
+        //     ].join('\n')
+        // })
     }
 }

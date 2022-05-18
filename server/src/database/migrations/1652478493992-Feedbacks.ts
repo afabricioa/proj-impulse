@@ -22,7 +22,8 @@ export class Feedbacks1652478493992 implements MigrationInterface {
                     },
                     {
                         name: "screenshot",
-                        type: "varchar"
+                        type: "varchar",
+                        isNullable: true
                     }
                 ]
             })
