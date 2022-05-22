@@ -1,7 +1,7 @@
 interface IFeedbackDTO{
     type: string;
     comment: string;
-    screenshot?: string;
+    screenshot?: Buffer;
 }
 
 interface IFeedbacksRepository{

@@ -12,8 +12,8 @@ export class Feedback{
     @Column()
     comment?: string;
 
-    @Column()
-    screenshot?: string;
+    @Column({type: "clob"})
+    screenshot?: Buffer;
 
     constructor(){
         if(!this.id){

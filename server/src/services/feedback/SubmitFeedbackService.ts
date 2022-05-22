@@ -5,7 +5,7 @@ import { MailUtil } from "../../utils/mail-util";
 interface IRequest {
     type: string;
     comment: string;
-    screenshot?: string;
+    screenshot?: Buffer;
 }
 
 export class SubmitFeedbackService{

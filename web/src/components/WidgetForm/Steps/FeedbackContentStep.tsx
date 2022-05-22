@@ -17,7 +17,6 @@ export function FeedbackContentStep(props: FeedbackContentProps){
 
     async function handleSubmitForm(event: FormEvent){
         event.preventDefault()
-        console.log(props)
         
         try {
             await api.post("/feedbacks", {
